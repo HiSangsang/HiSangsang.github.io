@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+
+		<meta charset="utf-8" />
+
+		<title></title>
+
+		<style>
+
+			#a{
+
+				font-size: 14px;
+
+				text-indent: 2em;
+
+				line-height: 1.5em;
+
+			}
+
+		</style>
+
+	</head>
+
+	<body>
+
+		<a id="d" href="javascript:">大</a>&nbsp;<a id="x" href="javascript:">小</a>
+
+		
+
+		<div id="a">
+
+			<p>大大大大大大大大大大大大大大大大大大大大</p>
+
+            <p>小小小小小小小小小小小小小小小小小小小小</p>
+			
+
+		</div>
+
+		
+
+		<script type="text/javascript" charset="UTF-8">
+
+			var a=document.getElementById('a');
+
+			var d=document.getElementById('d');
+
+			var x=document.getElementById('x');
+
+			var i=14;
+
+			
+
+			d.onclick=function(){
+
+				i+=2;
+
+				a.style.fontSize=i+'px';
+
+			}
+
+			x.onclick=function(){
+
+				i-=2;
+
+				a.style.fontSize=i+'px';
+
+			}
+
+		</script>
+
+	</body>
+
+</html>
