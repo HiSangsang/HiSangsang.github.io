@@ -1,0 +1,101 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+	<meta charset="UTF-8" />
+
+	<title>抽奖程序</title>
+
+</head>
+
+<body>
+
+	<div>
+
+			<h1>选择人数</h1>
+
+			<input type="text" name="" id="textstar" value="" />
+
+			<input type="button" name="" id="btnstar" value="开始" onclick="star()" />
+
+			<input type="button" name="" id="btnend" value="结束" onclick="stop()"/><br />
+
+			<input type="text" name="" id="textend" value="" />
+
+	</div>
+
+	<script type="text/javascript">
+
+		var textstar=document.getElementById("textstar");
+
+			var btnstar=document.getElementById("btnstar");
+
+			var btnend=document.getElementById("btnend");
+
+			var textend=document.getElementById("textend");
+
+			var a;
+
+		
+
+		var strs="1#2#3#4#5#6#7#8#9#10#11#12#13#14#15#16#17#18#19#20#21#22#23#24#25#26#27#28#29#30#31#32#33#34#35#36#37#38#39#40#41#42#43#44#45#46#47#48#49#50#";
+
+
+
+		var str=strs.split("#");
+
+			var arrResult;
+
+			var num;
+
+			function luck () {
+
+				str=strs.split("#");
+
+				var num=Number(textstar.value);
+
+				var arrResult=new Array();
+
+				if(num==0||isNaN(num)){
+
+					num=5;
+
+				}
+
+				for(var i=0;i<num;i++){
+
+					var index=parseInt(Math.random()*str.length);
+
+					arrResult.push(str[index]);
+
+					arrResult.splice(index,1);
+
+				}
+
+				textend.value=arrResult.join(",");
+
+			}
+
+			function star () {
+
+				a=setInterval("luck()",100);
+
+
+
+			}
+
+			function stop () {
+
+				window.clearInterval(a);
+
+
+
+			}
+
+	</script>
+
+</body>
+
+</html>
