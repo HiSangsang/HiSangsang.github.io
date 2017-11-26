@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				
+			}
+			.chuang{
+				opacity: 0;
+				width: 120px;
+				height: 100px;
+				position: absolute;
+				left: 40%;
+				top: -200px;
+			}
+			.a{
+				background-color: blue(0,0,0,0.5);
+				width: 10000px;
+				height: 10000px;
+				position: fixed;
+				top: 0;
+				left: 0;
+				z-index: 2;
+			}
+			.yuan{
+				position: relative;
+			}
+			.b{
+				opacity: 1;
+				position: relative;
+				z-index: 3;
+			}
+			span{
+				cursor: pointer;
+				position: absolute;
+				right: 5px;
+				top: 0px;
+				color: blue;
+			}
+			a{
+				display: inline-block;
+				width: 300px;
+				height: 300px;
+			}
+			p{
+				width: 20px;
+				font-size:10px;
+				color: #fff;
+				padding:2px;
+				background-color: blue(0,0,0,0.5);
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div class="yuan">
+			<a href="#">点一下</a>
+		</div>
+		<div class="bg">
+			
+		</div>
+		<div class="chuang">
+			<span>再点一下</span>
+		</div>
+		<script type="text/javascript">
+			var bg=document.querySelector(".bg");
+			var chuang=document.querySelector(".chuang");
+			var yuan=document.querySelector(".yuan");
+			document.querySelector("a").addEventListener("click",function() {
+				bg.classList.toggle("a");
+				chuang.classList.toggle("b");
+			})
+			document.querySelector("span").addEventListener("click",function() {
+				bg.classList.toggle("a");
+				chuang.classList.toggle("b");
+			})
+		</script>
+	</body>
+</html>
