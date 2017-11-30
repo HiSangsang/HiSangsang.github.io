@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.tooltip{
+				position: relative;
+			}
+			.tooltip span{
+				width: 180px;
+				padding: 5px 10px;
+				color: #FFFFFF;
+				background: #000000;
+				text-align: center;
+				border-radius: 2px;
+				position: absolute;
+				opacity: 0;
+				visibility: hidden;
+				transition: opacity .5s;
+			}
+			.tooltip span::after{
+				content: "";
+				width: 0;
+				height: 0;
+				position: absolute;
+			}
+			.tooltip[data-direction="top"] span{
+				left: -90px;
+				top: -40px;
+				
+			}
+			.tooltip[data-direction="top"] span::after{
+				top: 100%;
+				left: 50%;
+				margin-left: -8px;
+				border-top: 8px solid black;
+				border-right: 8px solid transparent;
+				border-left: 8px solid transparent;
+			}
+			.tooltip[data-direction="right"] span{
+				right: -210px;
+				top: -5px;
+				
+			}
+			.tooltip[data-direction="right"] span::after{
+				top: 25%;
+				left: 0;
+				margin-left: -8px;
+				border-right: 8px solid black;
+				border-top: 8px solid transparent;
+				border-bottom: 8px solid transparent;
+			}
+			.tooltip[data-direction="bottom"] span{
+				left: -90px;
+				bottom: -40px;
+				
+			}
+			.tooltip[data-direction="bottom"] span::after{
+				top: 0;
+				left: 50%;
+				margin-left: -8px;
+				margin-top: -8px;
+				border-bottom: 8px solid black;
+				border-right: 8px solid transparent;
+				border-left: 8px solid transparent;
+			}
+			.tooltip[data-direction="left"] span{
+				left: -210px;
+				top: -5px;
+				
+			}
+			.tooltip[data-direction="left"] span::after{
+				top: 25%;
+				right: 0;
+				margin-right: -8px;
+				border-left: 8px solid black;
+				border-top: 8px solid transparent;
+				border-bottom: 8px solid transparent;
+			}
+			
+			.tooltip span.show{
+				opacity: 1;
+				visibility: visible;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<p>○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○</p>
+			<p>○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○<a href="#" class="tooltip" data-content="●●●●" data-direction="top">●●●●</a>○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○</p>
+			<p>○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○</p>
+			<p>○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○</p>
+			<p>○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○</p>
+			<p>○○○○○○○○○○○○○○○○○○○○○○<a href="#" class="tooltip" data-content="●●●●" data-direction="left">●●●●</a>○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○<a href="#" class="tooltip" data-content="●●●●" data-direction="right">●●●●</a>○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○</p>
+			<p>○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○</p>
+			<p>○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○</p>
+			<p>○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○</p>
+			<p>○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○<a href="#" class="tooltip" data-content="●●●●" data-direction="bottom">●●●●</a>○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○</p>
+			<p>○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○</p>
+		</div>
+		<script type="text/javascript">
+			var oTooltips = document.querySelectorAll('.tooltip');
+			
+			for(var i = 0; i < oTooltips.length; i++){
+				var content = document.createElement("span");
+				var data = oTooltips[i].hasAttribute("data-content") ? oTooltips[i].getAttribute("data-content") : "提示为空";
+				var dir = oTooltips[i].hasAttribute("data-direction") ? oTooltips[i].getAttribute("data-direction") : "top";
+				oTooltips[i].setAttribute("data-direction", dir);
+				content.innerHTML = data;
+				oTooltips[i].appendChild(content);
+				oTooltips[i].addEventListener("mouseover", mouseoverHandler);
+				oTooltips[i].addEventListener("mouseout", mouseoutHandler);
+			}
+			
+			function mouseoverHandler(){
+				var event = event || window.event;
+				var target = event.target || event.srcElement;
+				var targetSpan = target.getElementsByTagName("span")[0];
+				targetSpan.classList.add("show");
+			}
+			function mouseoutHandler(){
+				var event = event || window.event;
+				var target = event.target || event.srcElement;
+				var targetSpan = target.getElementsByTagName("span")[0];
+				targetSpan.classList.remove("show");
+			}
+		</script>
+	</body>
+</html>
